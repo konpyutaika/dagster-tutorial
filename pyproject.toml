@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "catfacts"
+version = "0.0.1"
+description = "A boilerplate for creating data pipelines using Dagster, Docker, and Poetry"
+authors = ["Alexandre Guitton"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+dagster = "^1.2.2"
+dagster-airbyte = "^0.18.2"
+dagster-aws = "^0.18.2"
+dagster-postgres = "^0.18.2"
+python = "~3.11"
+pandas = "^1.5.3"
+pyarrow ="^11.0.0"
+
+[tool.poetry.dev-dependencies]
+dagit = "^1.1.15"
+pytest = "^7.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.dagster]
+module_name = "catfacts"

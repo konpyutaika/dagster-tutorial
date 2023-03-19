@@ -1,0 +1,18 @@
+
+version: '3.9'
+services:
+  dagsterdev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: dev
+    image: dagster_catfacts
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      AWS_PROFILE: ${AWS_PROFILE}
+    volumes:
+      - ./:/usr/src/app
+      - ~/.aws:/root/.aws

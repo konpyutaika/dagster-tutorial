@@ -1,0 +1,17 @@
+# Ignore IDE config
+/.idea
+/.vscode
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/log/*.log.gz
+/tmp
+.DS_Store
+.tddium*
+.byebug_history
+.env
+Session.vim
+
+.venv
+
+__pycache__/
