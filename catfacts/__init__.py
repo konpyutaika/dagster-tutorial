@@ -2,11 +2,11 @@ import os
 
 from dagster import Definitions
 
-from .assets import cats_assets
+from .assets import cats_assets, airflow_metadata_assets
 from .jobs import catfacts_job
 from .resources import RESOURCES_LOCAL, RESOURCES_STAGING, RESOURCES_PROD
 
-all_assets = [*cats_assets]
+all_assets = [*cats_assets,*airflow_metadata_assets]
 
 resources_by_deployment_name = {
     "prod": RESOURCES_PROD,
