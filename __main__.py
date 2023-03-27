@@ -16,11 +16,15 @@ if __name__ == "__main__":
                 "io_manager": S3Config(
                     s3_bucket="konpyutaika-product-catfacts-staging",
                     s3_prefix="catfacts",
+                ),
+                "stream_string_io_manager": S3Config(
+                    s3_bucket="konpyutaika-product-catfacts-staging",
+                    s3_prefix="local",
+                ),
+                "s3_path_io_manager": S3Config(
+                    s3_bucket="konpyutaika-product-catfacts-staging",
+                    s3_prefix="local",
                 )
-                #"string_io_manager": S3Config(
-                #    s3_bucket="konpyutaika-product-catfacts-staging",
-                #    s3_prefix="local",
-                #)
                 #"dataframe_io_manager": S3Config(
                 #    s3_bucket="konpyutaika-product-catfacts-staging",
                 #    s3_prefix="catfacts/parquet",
