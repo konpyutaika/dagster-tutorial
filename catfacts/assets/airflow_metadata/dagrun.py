@@ -27,6 +27,15 @@ def dagrun():
     return _myiterator
 
 
-@asset(ins={"dagrun":AssetIn(key="dagrun",input_manager_key="s3_path_io_manager")})
-def redshift_table(dagrun):
-    print(dagrun)
+@asset(ins={"dagrun":AssetIn(key="dagrun",input_manager_key="s3_path_io_manager")},
+       required_resource_keys={"redshift"})
+def redshift_table(context,dagrun):
+    query = f"""
+    COPY admin.dag_run 
+    FROM '{dagrun}'
+    CREDENTIALS 'aws_iam_role=arn:aws:iam::301420533736:role/RedshiftDatafoundation'
+    JSON 'auto' DATEFORMAT 'auto' TIMEFORMAT 'auto' TRUNCATECOLUMNS
+    REGION 'eu-central-1';
+    """
+    context.resources.redshift.execute_query(query=query)
+    return {"schema": "admin", "table": "dag_run"}
