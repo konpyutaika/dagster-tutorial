@@ -6,13 +6,14 @@ authors = ["Alexandre Guitton"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-dagster = "^1.2.2"
-dagster-airbyte = "^0.18.2"
-dagster-aws = "^0.18.2"
-dagster-postgres = "^0.18.2"
+dagster = "^1.2.6"
+dagster-airbyte = "^0.18.6"
+dagster-aws = "^0.18.6"
+dagster-postgres = "^0.18.6"
 python = "~3.11"
 pandas = "^1.5.3"
-pyarrow ="^11.0.0"
+pyarrow = "^11.0.0"
+pygsheets = "^2.0.6"
 
 [tool.poetry.dev-dependencies]
 dagit = "^1.1.15"
