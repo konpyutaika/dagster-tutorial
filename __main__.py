@@ -7,20 +7,4 @@ from catfacts.resources.s3_config import S3Config
 
 
 if __name__ == "__main__":
-    result = defs.get_job_def(job_name).execute_in_process(
-        run_config=RunConfig(
-            ops={
-                "catfacts": ApiConfig(max_length=70, limit=20),
-            },
-            resources={
-                "io_manager": S3Config(
-                    s3_bucket="konpyutaika-product-catfacts-staging",
-                    s3_prefix="catfacts",
-                ),
-                "dataframe_io_manager": S3Config(
-                    s3_bucket="konpyutaika-product-catfacts-staging",
-                    s3_prefix="catfacts/parquet",
-                )
-            }
-        )
-    )
+    result = defs.get_job_def("redshift").execute_in_process()
