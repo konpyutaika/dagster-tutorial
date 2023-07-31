@@ -25,5 +25,5 @@ assets = build_assets(
     object_io_manager_key="s3_pd_csv_io_manager",
     table_io_manager_key="s3_pd_csv_io_manager",
     table_input_manager_key="s3_path_input_loader",
-    partitioned=False,
+    partitioned=True,
 )

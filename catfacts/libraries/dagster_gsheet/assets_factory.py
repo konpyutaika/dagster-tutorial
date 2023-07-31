@@ -174,6 +174,7 @@ def _build_assets(
             )
         else:
             by_partition: Dict[str, pd.DataFrame] = {}
+
             for partition_key in context.asset_partition_keys_for_output():
                 uri = data[partition_key]
                 target_table = partition_key
